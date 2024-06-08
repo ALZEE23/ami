@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('gaps', function (Blueprint $table) {
-            $table->id();   
+        Schema::create('analisis_swots', function (Blueprint $table) {
+            $table->id();
             $table->string('kategori');
-            $table->string('subdimensi');
-            $table->text('indikator');
-            $table->string('satuan');
-            $table->string('eksisting');
-            $table->string('target');
-            $table->string('gap');
+            $table->text('kekuatan');
+            $table->text('kelemahan');
+            $table->text('peluang');
+            $table->text('ancaman');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('gaps');
+        Schema::dropIfExists('analisis_swots');
     }
 };
