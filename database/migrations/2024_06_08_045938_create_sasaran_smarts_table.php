@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('sasaran_smarts', function (Blueprint $table) {
             $table->id();
+            $table->string('kategori');
+            $table->text('dimensi');
+            $table->text('sub_dimensi');
+            $table->text('sasaran');
+            $table->text('dasar');
             $table->timestamps();
         });
     }
