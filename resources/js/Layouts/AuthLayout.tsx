@@ -9,7 +9,7 @@ export default function AuthLayout({ children }: PropsWithChildren) {
   };
 
   return (
-    <main className="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+    <main className="container grid relative h-screen flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0">
       <aside className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
         {!loaded && <Skeleton />}
         <img
