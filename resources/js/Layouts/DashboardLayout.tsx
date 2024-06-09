@@ -1,8 +1,10 @@
-import Sidebar from "@/Components/Sidebar";
 import { useSidebarToggle } from "@/hooks/use-sidebar-toggle";
 import { cn } from "@/lib/utils";
 import { type PropsWithChildren } from "react";
 import { useStore } from "zustand";
+
+import Footer from "@/Components/Footer";
+import Sidebar from "@/Components/Sidebar";
 
 export default function DashboardLayout({ children }: PropsWithChildren) {
   const sidebar = useStore(useSidebarToggle, (state) => state);
@@ -26,7 +28,7 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
           sidebar?.isOpen === false ? "lg:ml-[90px]" : "lg:ml-72",
         )}
       >
-        Test Footer
+        <Footer />
       </footer>
     </>
   );
