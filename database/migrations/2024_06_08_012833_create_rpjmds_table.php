@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('indikator_tujuan');
             $table->string('sasaran');
             $table->string('indikator_sasaran');
-            $table->boolean('gevernance');
+            $table->boolean('governance');
             $table->boolean('branding');
             $table->boolean('economy');
             $table->boolean('living');
