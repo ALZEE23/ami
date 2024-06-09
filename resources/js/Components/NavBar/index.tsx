@@ -1,10 +1,12 @@
+import { type User } from "@/types"
 import UserNav from "./UserNav"
 
 type NavBarProps = {
   title: string
+  user: User
 }
 
-export default function NavBar({ title }: NavBarProps) {
+export default function NavBar({ title, user }: NavBarProps) {
   return (
     <header className="sticky top-0 z-10 w-full bg-background/95 shadow backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:shadow-secondary">
       <div className="mx-4 sm:mx-8 flex h-14 items-center">
@@ -12,7 +14,7 @@ export default function NavBar({ title }: NavBarProps) {
           <h1 className="font-bold">{title}</h1>
         </div>
         <div className="flex flex-1 items-center gap-x-2 justify-end">
-          <UserNav />
+          <UserNav user={user} />
         </div>
       </div>
     </header>

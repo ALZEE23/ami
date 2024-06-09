@@ -2,11 +2,12 @@ import { Head } from "@inertiajs/react";
 
 import { ContentLayout } from "@/Layouts/ContentLayout";
 import DashboardLayout from "@/Layouts/DashboardLayout";
+import { type PageProps } from "@/types";
 
-export default function Dashboard() {
+export default function Dashboard({ auth }: PageProps) {
   return (
     <DashboardLayout>
-      <ContentLayout title="Dashboard">
+      <ContentLayout title="Dashboard" user={auth.user}>
         <Head title="Dashboard" />
         <div className="py-12">
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
