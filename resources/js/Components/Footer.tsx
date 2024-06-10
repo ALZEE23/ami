@@ -16,7 +16,7 @@ export default function Footer() {
           </Link>
           . The source code is available on{" "}
           <Link
-            href="https://github.com/salimi-my/shadcn-ui-sidebar"
+            href="https://github.com/ALZEE23/ami"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium underline underline-offset-4"
