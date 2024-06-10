@@ -244,7 +244,7 @@ export function CollapseMenuButton({
               </Link>
             </DropdownMenuItem>
           ) : (
-            <DropdownMenu>
+            <DropdownMenu key={index}>
               <DropdownMenuTrigger asChild>
                 <DropdownMenuItem asChild>
                   <div className="w-full justify-start">
