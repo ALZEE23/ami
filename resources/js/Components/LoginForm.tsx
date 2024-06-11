@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 import { cn } from "@/lib/utils";
 import { useForm } from "@inertiajs/react";
 import { LoaderCircle } from "lucide-react";
-import { HTMLAttributes, SyntheticEvent, useEffect } from "react";
+import { type HTMLAttributes, type SyntheticEvent, useEffect } from "react";
 
 import InputError from "./InputError";
 import { Button } from "./ui/button";
@@ -11,30 +11,32 @@ import { Checkbox } from "./ui/checkbox";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 
-interface LoginFormProps extends HTMLAttributes<HTMLDivElement> { }
+type LoginFormProps = HTMLAttributes<HTMLDivElement>;
 
 export default function LoginForm({ className, ...props }: LoginFormProps) {
   const { data, setData, post, processing, errors, reset } = useForm({
-    name: '',
-    password: '',
+    name: "",
+    password: "",
     remember: false,
   });
 
   useEffect(() => {
     return () => {
-      reset('password');
+      reset("password");
     };
   }, []);
 
   async function onSubmit(e: SyntheticEvent) {
-    e.preventDefault()
+    e.preventDefault();
 
-    post(route('login'));
+    post(route("login"));
   }
 
   return (
     <div className={cn("grid gap-6", className)} {...props}>
-      {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
+      {status && (
+        <div className="mb-4 text-sm font-medium text-green-600">{status}</div>
+      )}
       <form onSubmit={onSubmit}>
         <div className="grid gap-4">
           <div className="grid gap-1">
@@ -51,7 +53,7 @@ export default function LoginForm({ className, ...props }: LoginFormProps) {
               autoCorrect="off"
               disabled={processing}
               value={data.name}
-              onChange={(e) => setData('name', e.target.value)}
+              onChange={(e) => setData("name", e.target.value)}
             />
             <InputError message={errors.name} className="mt-2" />
           </div>
@@ -69,7 +71,7 @@ export default function LoginForm({ className, ...props }: LoginFormProps) {
               autoCorrect="off"
               disabled={processing}
               value={data.password}
-              onChange={(e) => setData('password', e.target.value)}
+              onChange={(e) => setData("password", e.target.value)}
             />
             <InputError message={errors.password} className="mt-2" />
           </div>
@@ -96,5 +98,5 @@ export default function LoginForm({ className, ...props }: LoginFormProps) {
         </div>
       </form>
     </div>
-  )
+  );
 }
