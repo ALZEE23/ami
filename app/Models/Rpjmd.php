@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class rpjmd extends Model
+class Rpjmd extends Model
 {
     use HasFactory;
 

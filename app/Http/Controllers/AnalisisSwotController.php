@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class analisisSwotController extends Controller
+class AnalisisSwotController extends Controller
 {
     //
 }

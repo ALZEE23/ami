@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\rpjmd;
+use App\Models\Rpjmd;
 use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Validator;
 
-class rpjmdController extends Controller
+class RpjmdController extends Controller
 {
     //
     public function index(): Response{
-        $rpjmds = rpjmd::all();
+        $rpjmds = Rpjmd::all();
         return Inertia::render("",[
             "rpjmds"=> $rpjmds
     ]);
@@ -38,7 +38,7 @@ class rpjmdController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $rpjmd = rpjmd::create([
+        $rpjmd = Rpjmd::create([
             "misi" => $request->misi,
             "tujuan" => $request->tujuan,
             "indikator_tujuan" => $request->indikator,
@@ -74,7 +74,7 @@ class rpjmdController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $rpjmd = rpjmd::find($id);
+        $rpjmd = Rpjmd::find($id);
 
         $rpjmd->update([
             "misi" => $request->misi,
@@ -95,7 +95,7 @@ class rpjmdController extends Controller
     }
 
     public function destroy(Request $request, $id): RedirectResponse{
-        $rpjmd = rpjmd::find($id);
+        $rpjmd = Rpjmd::find($id);
         $rpjmd->delete();
 
         return redirect()->route("rpjmd")->with("success","Data Berhasil di Hapus");

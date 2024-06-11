@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class opd extends Model
+class KesiapanStruktur extends Model
 {
     use HasFactory;
 }
