@@ -1,5 +1,5 @@
-import { Head } from "@inertiajs/react";
 
+import MetaTags from "@/Components/Meta/MetaTags";
 import { ContentLayout } from "@/Layouts/ContentLayout";
 import DashboardLayout from "@/Layouts/DashboardLayout";
 import { type PageProps } from "@/types";
@@ -7,7 +7,7 @@ import { type PageProps } from "@/types";
 export default function Dashboard({ auth }: PageProps) {
   return (
     <>
-      <Head title="Dashboard" />
+      <MetaTags title="Dashboard" />
       <DashboardLayout>
         <ContentLayout title="Dashboard" user={auth.user}>
           <div className="border bg-card text-card-foreground shadow rounded-lg border-none">
