@@ -1,15 +1,13 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import { useForm } from "@inertiajs/react";
 import { LoaderCircle } from "lucide-react";
-import { type HTMLAttributes, type SyntheticEvent, useEffect } from "react";
+import { useEffect, type HTMLAttributes, type SyntheticEvent } from "react";
 
+import { Button } from "../ui/button";
+import { Checkbox } from "../ui/checkbox";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 import InputError from "./InputError";
-import { Button } from "./ui/button";
-import { Checkbox } from "./ui/checkbox";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
 
 type LoginFormProps = HTMLAttributes<HTMLDivElement>;
 

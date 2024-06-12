@@ -1,7 +1,7 @@
 import { type User } from "@/types";
 import { type PropsWithChildren } from "react";
 
-import NavBar from "@/Components/NavBar";
+import NavBar from "@/Components/Layout/NavBar";
 
 export function ContentLayout({ title, user, children }: PropsWithChildren<{ title: string, user: User }>) {
   return (
