@@ -1,6 +1,7 @@
 import { type User } from "@/types"
 
 import { SidebarMobile } from "../Sidebar/SidebarMobile"
+import { ThemeToggle } from "../ThemeToggle"
 import UserNav from "./UserNav"
 
 type NavBarProps = {
@@ -17,6 +18,7 @@ export default function NavBar({ title, user }: NavBarProps) {
           <h1 className="font-bold">{title}</h1>
         </div>
         <div className="flex flex-1 items-center gap-x-2 justify-end">
+          <ThemeToggle />
           <UserNav user={user} />
         </div>
       </div>
