@@ -22,7 +22,7 @@ export default function MetaTags({ title, description, image, url = (import.meta
   const DEFAULT_DESCRIPTION = ""
   const currentDescription = description ?? DEFAULT_DESCRIPTION
 
-  const favicon = "/favicon.ico"
+  const favicon = `${url}/favicon.ico`
 
   return (
     <Head>
