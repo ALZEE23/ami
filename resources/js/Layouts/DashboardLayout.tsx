@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { type PropsWithChildren } from "react";
 import { useStore } from "zustand";
 
-import Footer from "@/Components/Footer";
+import Footer from "@/Components/Layout/Footer";
 import Sidebar from "@/Components/Sidebar";
 
 export default function DashboardLayout({ children }: PropsWithChildren) {

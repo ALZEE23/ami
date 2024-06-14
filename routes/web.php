@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\testController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -15,21 +12,15 @@ use Inertia\Inertia;
 //     ]);
 // });
 
-
 //Route Dashboard Where user after login
 Route::get('/', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-
-//Route Where Auth User 
+//Route Where Auth User
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
     //Route Form
-    Route::group(['prefix'=> '/form'], function () {
+    Route::group(['prefix' => '/form'], function () {
 
         //Route RPJMD
         Route::get('/rpjmd', function () {
@@ -78,4 +69,4 @@ Route::middleware('auth')->group(function () {
     });
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

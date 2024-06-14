@@ -35,7 +35,7 @@ export default function SidebarMenu({ isOpen }: SidebarMenuProps) {
                 <TooltipProvider>
                   <Tooltip delayDuration={100}>
                     <TooltipTrigger className="w-full">
-                      <div className="flex w-full items-center justify-center">
+                      <div className="flex w-full items-center justify-center text-muted-foreground">
                         <Ellipsis className="h-5 w-5" />
                       </div>
                     </TooltipTrigger>
