@@ -14,7 +14,7 @@ class RpjmdController extends Controller
     //
     public function index(): Response{
         $rpjmds = Rpjmd::all();
-        return Inertia::render("",[
+        return Inertia::render("Rpjmd",[
             "rpjmds"=> $rpjmds
     ]);
     }
@@ -23,7 +23,7 @@ class RpjmdController extends Controller
         $validator = Validator::make($request->all(),[
             "misi" => "required",
             "tujuan"=> "required",
-            "indikator_tujuan"=> "required",
+            "indikator_tujuan"=> "",
             "sasaran" => "required",
             "indikator_sasaran"=> "required",
             "governance"=> "",
@@ -52,7 +52,7 @@ class RpjmdController extends Controller
             "environment" => $request->environment,
         ]);
 
-        return redirect()->route("rpjm")->with("success","Data Berhasil Ditambahkan");
+        return redirect()->route("rpjmd.index")->with("success","Data Berha    sil Ditambahkan");
     }
 
     public function update(Request $request,$id): RedirectResponse{
