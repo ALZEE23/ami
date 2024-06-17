@@ -1,5 +1,14 @@
 <?php
 
+use App\Http\Controllers\KertasKerjaController;
+use App\Http\Controllers\KesiapanStrukuturController;
+use App\Http\Controllers\RpjmdController;
+use App\Http\Controllers\AnalisisKesenjanganController;
+use App\Http\Controllers\AnalisisSwotController;
+use App\Http\Controllers\GapController;
+use App\Http\Controllers\SasaranSmartController;
+use App\Http\Controllers\SettingAplikasiController;
+use App\Models\AnalisisKesenjangan;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -23,44 +32,28 @@ Route::middleware('auth')->group(function () {
     Route::group(['prefix' => '/form'], function () {
 
         //Route RPJMD
-        Route::get('/rpjmd', function () {
-            return Inertia::render('Rpjmd');
-        })->name('form.rpjmd');
+        Route::resource('rpjmd',RpjmdController::class); 
 
         //Route Analisis Masa Depan
-        Route::get('/masa-depan', function () {
-            return Inertia::render('MasaDepan');
-        })->name('form.masa-depan');
+        Route::resource('masa-depan', KertasKerjaController::class);
 
         //Route Analisis Kesiapan
-        Route::get('/kesiapan', function () {
-            return Inertia::render('Kesiapan');
-        })->name('form.kesiapan');
+        Route::resource('kesiapan', KesiapanStrukuturController::class);
 
         //Route Analisis Kesenjangan
-        Route::get('/kesenjangan', function () {
-            return Inertia::render('Kesenjangan');
-        })->name('form.kesenjangan');
+        Route::resource('kesenjangan', AnalisisKesenjanganController::class);
 
         //Route GAP Indikator RPJMD
-        Route::get('/gap-indikator-rpjmd', function () {
-            return Inertia::render('GapIndikator');
-        })->name('form.gap-indikator-rpjmd');
+        Route::resource('gap-indikator-rpjmd', GapController::class);
 
         //Route Analisis Swot/Twos
-        Route::get('/swot', function () {
-            return Inertia::render('Swot');
-        })->name('form.swot');
+        Route::resource('swot', AnalisisSwotController::class);
 
         //Route Sasaran Pembangunan
-        Route::get('/sasaran-pembangunan', function () {
-            return Inertia::render('SasaranPembangunan');
-        })->name('SasaranPembangunan');
+        Route::resource('sasaran-pembangunan', SasaranSmartController::class); 
 
-        //Route Sasaran Pembangunan
-        Route::get('/sasaran-pembangunan', function () {
-            return Inertia::render('sasaran-pembangunan');
-        })->name('form.sasaran-pembangunan');
+        //Route Settings
+        Route::resource('settings', SettingAplikasiController::class);
 
         //Route Inventaris Invasi/Aplikasi
         Route::get('/inventaris-inovasi', function () {

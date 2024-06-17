@@ -8,7 +8,7 @@ use App\Models\AnalisisKesenjangan;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 
-class AnilisiskesenjanganController extends Controller
+class AnalisisKesenjanganController extends Controller
 {
     //
     public function index(): Response{
