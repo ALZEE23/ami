@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class AnalisisKesenjangan extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "dimensi","kondisi","tren","gap"
+    ];
 }

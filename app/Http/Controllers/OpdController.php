@@ -51,4 +51,9 @@ class OpdController extends Controller
 
         return redirect()->route("")->with("success","Data Berhasil di Update");
     }
+
+    public function destroy(Request $request,Opd $opd): RedirectResponse{
+        $opd->find($opd->id)->delete();
+        return redirect()->route("")->with("success","Data Berhasil di Hapus");
+    }
 }

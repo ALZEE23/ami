@@ -23,7 +23,7 @@ class RpjmdController extends Controller
         $validator = Validator::make($request->all(),[
             "misi" => "required",
             "tujuan"=> "required",
-            "indikator_tujuan"=> "",
+            "indikator_tujuan"=> "required",
             "sasaran" => "required",
             "indikator_sasaran"=> "required",
             "governance"=> "",
@@ -41,7 +41,7 @@ class RpjmdController extends Controller
         $rpjmd = Rpjmd::create([
             "misi" => $request->misi,
             "tujuan" => $request->tujuan,
-            "indikator_tujuan" => $request->indikator,
+            "indikator_tujuan" => $request->indikator_tujuan,
             "sasaran" => $request->sasaran,
             "indikator_sasaran" => $request->indikator_sasaran,
             "governance" => $request->governance,

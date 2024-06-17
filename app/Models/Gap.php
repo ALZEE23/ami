@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Gap extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "kategori","subdimensi","indikator","satuan","eksisting","target","gap"
+    ];
 }
